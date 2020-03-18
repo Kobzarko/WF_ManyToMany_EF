@@ -3,7 +3,7 @@ namespace WF_ManyToMany_EF.Models
 {
     class SoccerContext:DbContext
     {
-        public SoccerContext():base("SoccerDb")
+        public SoccerContext():base("SoccerDb2")
         {
 
         }

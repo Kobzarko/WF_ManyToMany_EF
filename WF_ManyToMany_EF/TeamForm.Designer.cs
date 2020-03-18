@@ -123,10 +123,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        protected internal System.Windows.Forms.TextBox textBox1;
+        protected internal System.Windows.Forms.TextBox textBox2;
     }
 }

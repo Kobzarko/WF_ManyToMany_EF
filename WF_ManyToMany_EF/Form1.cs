@@ -153,7 +153,27 @@ namespace WF_ManyToMany_EF
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count<1)
+            {
+                return;
+            }
 
+            int index = dataGridView1.SelectedRows[0].Index;
+            int id = 0;
+
+            bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+            if (converted == false)
+            {
+                return;
+            }
+
+            Player player = db.Players.Find(id);
+            // удалить
+            db.Players.Remove(player);
+            // сохранить
+            db.SaveChanges();
+
+            MessageBox.Show(" Запись удалена ");
         }
 
         #endregion
@@ -161,7 +181,26 @@ namespace WF_ManyToMany_EF
         #region Добавить команду
         private void button4_Click(object sender, EventArgs e)
         {
+            // вызовем форму
+            TeamForm teamForm = new TeamForm();
+            // отобразим как модальное окно
+            DialogResult dialogResult = teamForm.ShowDialog(this);
+            if (dialogResult == DialogResult.Cancel)
+                return;
 
+            Team team = new Team();
+            // не забываем про модификатор доступа
+            // у полей
+            team.Name = teamForm.textBox1.Text;
+            team.Coach = teamForm.textBox2.Text;
+
+            team.Players = new List<Player>();
+
+            db.Teams.Add(team);
+
+            db.SaveChanges();
+
+            MessageBox.Show("запись добавлена");
         }
         #endregion
 

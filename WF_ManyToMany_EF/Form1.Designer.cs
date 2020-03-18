@@ -34,11 +34,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -50,8 +49,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.teamsDataGridViewTextBoxColumn});
+            this.ageDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.playerBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(31, 35);
             this.dataGridView1.Name = "dataGridView1";
@@ -100,6 +98,10 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // playerBindingSource
+            // 
+            this.playerBindingSource.DataSource = typeof(WF_ManyToMany_EF.Player);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -124,18 +126,6 @@
             this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
             this.ageDataGridViewTextBoxColumn.Width = 125;
             // 
-            // teamsDataGridViewTextBoxColumn
-            // 
-            this.teamsDataGridViewTextBoxColumn.DataPropertyName = "Teams";
-            this.teamsDataGridViewTextBoxColumn.HeaderText = "Команда";
-            this.teamsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.teamsDataGridViewTextBoxColumn.Name = "teamsDataGridViewTextBoxColumn";
-            this.teamsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // playerBindingSource
-            // 
-            this.playerBindingSource.DataSource = typeof(WF_ManyToMany_EF.Player);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -157,15 +147,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teamsDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource playerBindingSource;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
     }
 }
 
